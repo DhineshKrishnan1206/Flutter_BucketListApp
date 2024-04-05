@@ -69,7 +69,10 @@ Widget ListData(){
                         imageUrl: dataFromApi[index]['image'] ?? "",
                       );
                     })).then((value){
-                      getData();
+                      if(value=="refresh"){
+                        getData();
+                      }
+
                 });
               },
               leading: CircleAvatar(

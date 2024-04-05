@@ -20,7 +20,7 @@ class _AddBucketListScreenState extends State<ViewItemsScreen> {
     Navigator.pop(context);
     try{
       Response response = await Dio().delete("https://flutter1-9b7a6-default-rtdb.firebaseio.com/bucketlist/${widget.index}.json");
-      Navigator.pop(context);
+      Navigator.pop(context,"refresh");
     }catch(e){
       print(e);
     }
