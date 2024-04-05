@@ -64,6 +64,7 @@ Widget ListData(){
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) {
                       return ViewItemsScreen(
+                        index: index,
                         title: dataFromApi[index]['item'] ?? "",
                         imageUrl: dataFromApi[index]['image'] ?? "",
                       );
