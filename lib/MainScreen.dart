@@ -68,7 +68,9 @@ Widget ListData(){
                         title: dataFromApi[index]['item'] ?? "",
                         imageUrl: dataFromApi[index]['image'] ?? "",
                       );
-                    }));
+                    })).then((value){
+                      getData();
+                });
               },
               leading: CircleAvatar(
                 backgroundImage:

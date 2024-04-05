@@ -16,9 +16,11 @@ class _AddBucketListScreenState extends State<ViewItemsScreen> {
     print("$widget.title");
   }
   
-  void deleteData()async{
+  Future<void> deleteData()async{
+    Navigator.pop(context);
     try{
       Response response = await Dio().delete("https://flutter1-9b7a6-default-rtdb.firebaseio.com/bucketlist/${widget.index}.json");
+      Navigator.pop(context);
     }catch(e){
       print(e);
     }
@@ -46,7 +48,7 @@ class _AddBucketListScreenState extends State<ViewItemsScreen> {
                         },child: Text("Cancel")),
                         InkWell(onTap:(){
                           deleteData();
-                          Navigator.push(context,MaterialPageRoute(builder: (context){return MainScreen();}));
+                          //Navigator.push(context,MaterialPageRoute(builder: (context){return MainScreen();}));
                         },child: Text("Confirm"))
                       ],
                       title: Text("Are you sure to Delete"),);
